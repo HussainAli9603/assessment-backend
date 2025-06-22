@@ -13,13 +13,13 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // For parsing application/json
-app.use(express.urlencoded({ extended: false })); // For parsing application/x-www-form-urlencoded
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: false })); 
 
 // Define models (important for Sequelize.sync to find them)
 // Sequelize models need to be imported/required so sequelize.sync() can find them
-require('./models/User'); // <--- Require User model
-require('./models/Task'); // <--- Require Task model (which now depends on User)
+require('./models/User'); 
+require('./models/Task'); 
 
 // Connect to the database and sync models
 connectDB(); // This calls sequelize.authenticate() and sequelize.sync()
